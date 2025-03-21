@@ -1,0 +1,50 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 245, 248, 250;
+  --background-end-rgb: 245, 248, 250;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary hover:bg-darkBlue text-white font-bold py-2 px-4 rounded-full transition-colors;
+  }
+  
+  .btn-secondary {
+    @apply bg-white hover:bg-extraLightGray text-primary font-bold py-2 px-4 rounded-full border border-primary transition-colors;
+  }
+  
+  .btn-danger {
+    @apply bg-danger hover:bg-opacity-80 text-white font-bold py-2 px-4 rounded-full transition-colors;
+  }
+  
+  .input-field {
+    @apply w-full p-3 border border-extraLightGray rounded-lg focus:outline-none focus:ring-2 focus:ring-primary;
+  }
+  
+  .tweet-card {
+    @apply p-4 border-b border-extraLightGray hover:bg-gray-50 transition-colors cursor-pointer;
+  }
+  
+  .sidebar-item {
+    @apply flex items-center p-3 my-1 rounded-full hover:bg-extraLightGray transition-colors text-lg;
+  }
+  
+  .sidebar-item-active {
+    @apply flex items-center p-3 my-1 rounded-full bg-blue-50 text-primary font-bold transition-colors text-lg;
+  }
+}
